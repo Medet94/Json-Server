@@ -1,0 +1,45 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  text-align: center;
+}
+
+.left-panel {
+  background-color: #7d7979;
+  width: 30%;
+  height: 100%;
+  float: left;
+  border-right: 2px solid red;
+}
+
+.main-panel {
+  background-color: #edb9b9;
+  width: 80%;
+  height: 100%;
+  float: left;
+  border-bottom: 2px solid red;
+}
+
+.input-area {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.input {
+  border: 2px solid red;
+  height: 50px;
+  margin: 10px;
+  flex-grow: 1;
+}
+
+.button {
+  border: 2px solid red;
+  height: 50px;
+  width: 100px;
+  margin: 10px;
+  background-color: #d0d0d0;
+}
