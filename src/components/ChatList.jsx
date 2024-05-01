@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import Chat from '../components/Chat';
-import PostContext from '../context/PostContext';
+import PostContext from '../context/index';
 import { IoIosAdd } from 'react-icons/io';
 import { MdDoneOutline } from 'react-icons/md';
 

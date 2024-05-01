@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import Message from '../components/Message';
-import PostContext from '../context/PostContext';
+import PostContext from '../context/index';
 
 function MessageList() {
   const { selectedPostMessages, selectedPostId, allChats } =

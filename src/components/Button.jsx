@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 
-import PostContext from '../context/PostContext';
+import PostContext from '../context/index';
 import { IoMdSend } from 'react-icons/io';
 
 function Button() {

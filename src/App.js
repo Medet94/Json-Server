@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import LeftPanel from './pages/LeftPanel';
 import MainPanel from './pages/MainPanel';
 import {
@@ -12,13 +11,14 @@ import {
   updatePostById,
   getCommentById,
 } from './url';
-import PostContext from './context/PostContext';
+import PostContext from './context/index';
 import Input from './components/Input';
 import Button from './components/Button';
+import axios from 'axios';
 import './App.css';
 
 const App = () => {
-  //  state
+  //state;
   const [allChats, setAllChats] = useState([]);
 
   const [selectedPostMessages, setSelectedPostMessages] = useState([]);
@@ -45,7 +45,7 @@ const App = () => {
       .catch((error) => console.error(error));
   }, []);
 
-  // messages
+  //messages
   let chatClickHandler = async (postId) => {
     let allCommentsByPostId;
     allCommentsByPostId = await fetch(`${getCommentsByPostId}${postId}`);
@@ -61,7 +61,7 @@ const App = () => {
     commentById = await commentById.json();
     setSelectedCommentId(commentId);
   };
-  // input
+  //input
   const handleInputChange = (event) => {
     setInputText(event.target.value);
   };
@@ -70,7 +70,7 @@ const App = () => {
     setChatListInput(event.target.value);
   };
 
-  // send message to server
+  //send message to server
   const handleSendClick = async () => {
     if (inputText.length > 0) {
       try {
@@ -87,7 +87,7 @@ const App = () => {
     }
   };
 
-  // create a new post
+  //create a new post
   const createNewPostClick = async () => {
     if (chatListInpit.length > 0) {
       try {
@@ -104,7 +104,7 @@ const App = () => {
     }
   };
 
-  // update post
+  //update post
   const updatePost = async () => {
     if (chatListInpit.length > 0) {
       const postId = selectedPostId;
@@ -123,7 +123,7 @@ const App = () => {
     }
   };
 
-  // delete comment
+  //delete comment
   const deleteComment = async () => {
     if (window.confirm('Do you wanna delete this comment?')) {
       let commentId = selectedCommentId;
@@ -139,7 +139,7 @@ const App = () => {
     }
   };
 
-  // delete post
+  //delete post
   const deletePost = async () => {
     if (window.confirm(`Do you wanna delete the post : ${selectedPostId}?`)) {
       console.log('Post deleted');

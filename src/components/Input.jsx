@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import PostContext from '../context/PostContext';
+import PostContext from '../context/index';
 
 const Input = () => {
   const { handleInputChange } = useContext(PostContext);

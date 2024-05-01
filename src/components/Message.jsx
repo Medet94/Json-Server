@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { RiChatDeleteLine } from 'react-icons/ri';
-import PostContext from '../context/PostContext';
+import PostContext from '../context/index';
 
 function Message({ message }) {
   const { deleteComment, commentClickHandler } = useContext(PostContext);
