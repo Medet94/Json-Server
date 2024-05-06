@@ -1,36 +1,46 @@
 {
   "posts": [
     {
-      "id": "fba3",
-      "title": "Reducer",
-      "views": 3.9029796055127353
+      "id": "c571",
+      "title": "Restart",
+      "views": 86.73890861629955
     },
     {
-      "id": "ac17",
-      "title": "Datamicron",
-      "views": 4.310584081651547
-    },
-    {
-      "id": "ce3a",
-      "title": "Phyton",
-      "views": 17.64631494181006
+      "id": "f0ef",
+      "title": "delete",
+      "views": 16.52023004776928
     }
   ],
   "comments": [
     {
-      "id": "ed97",
-      "text": "Start new post",
-      "postId": null
+      "id": "b4e3",
+      "text": "fgnfg",
+      "postId": "c571"
     },
     {
-      "id": "1172",
-      "text": "new message",
-      "postId": null
+      "id": "489c",
+      "text": "fdtged",
+      "postId": "c571"
     },
     {
-      "id": "bb32",
-      "text": "react",
-      "postId": null
+      "id": "593e",
+      "text": "wefrf",
+      "postId": "c571"
+    },
+    {
+      "id": "1b8c",
+      "text": "delete all message",
+      "postId": "f0ef"
+    },
+    {
+      "id": "bbf6",
+      "text": "delete all comments",
+      "postId": "f0ef"
+    },
+    {
+      "id": "1452",
+      "text": "delete all posts",
+      "postId": "f0ef"
     }
   ],
   "profile": {
