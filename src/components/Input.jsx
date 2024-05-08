@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import PostContext from '../context/index';
+import { useDispatch } from 'react-redux';
 
 const Input = () => {
   const { handleInputChange } = useContext(PostContext);

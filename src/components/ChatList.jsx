@@ -1,32 +1,48 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Chat from '../components/Chat';
 import PostContext from '../context/index';
 import { IoIosAdd } from 'react-icons/io';
+import { useSelector, useDispatch } from 'react-redux';
+import { createANewPost } from '../redux/slices/postSlice';
+import { BeatLoader } from 'react-spinners';
 
 function ChatList() {
-  const {
-    allChats,
-    chatClickHandler,
-    createNewPostClick,
-    handleChatListInputChange,
-  } = useContext(PostContext);
+  const [title, setTitle] = useState('');
+  const { chatClickHandler } = useContext(PostContext);
+
+  const posts = useSelector((state) => state.posts.posts);
+  const isLoading = useSelector((state) => state.posts.isLoading);
+
+  const dispatch = useDispatch();
+
+  const createNewPostClick = (title) => {
+    dispatch(createANewPost(title));
+  };
+
+  const handleTitle = (e) => {
+    setTitle(e.target.value);
+  };
 
   return (
     <div className="chat-list-container">
       <h1>ChatList</h1>
-      <input
-        className="chat-list-input"
-        type="text"
-        placeholder="Создать новый пост"
-        onChange={handleChatListInputChange}
-      />
+      {isLoading ? (
+        <BeatLoader />
+      ) : (
+        <input
+          className="chat-list-input"
+          type="text"
+          placeholder="Создать новый пост"
+          onChange={handleTitle}
+        />
+      )}
 
-      <span className="icon-add" onClick={createNewPostClick}>
+      <span className="icon-add" onClick={() => createNewPostClick(title)}>
         <IoIosAdd />
       </span>
 
       <ul className="chat-list">
-        {allChats.map((post) => (
+        {posts.map((post) => (
           <Chat
             onChatItemHandler={chatClickHandler}
             chatItem={post}

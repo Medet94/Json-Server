@@ -1,22 +1,24 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Message from '../components/Message';
-import PostContext from '../context/index';
+import { useSelector } from 'react-redux';
+import { ClockLoader } from 'react-spinners';
 
 function MessageList() {
-  const { selectedPostMessages, selectedPostId, allChats } =
-    useContext(PostContext);
+  const comments = useSelector((state) => state.comments.comments);
+  const isLoading = useSelector((state) => state.comments.isLoading);
 
   return (
     <>
-      {allChats.map((post) =>
-        post.id === selectedPostId ? <h3>{post.title}</h3> : ''
+      {' '}
+      {isLoading ? (
+        <ClockLoader color="#5269ec" />
+      ) : (
+        <ul className="chat-list">
+          {comments.map((message, id) => {
+            return <Message message={message} key={id} />;
+          })}
+        </ul>
       )}
-
-      <ul className="chat-list">
-        {selectedPostMessages.map((message, id) => {
-          return <Message message={message} key={id} />;
-        })}
-      </ul>
     </>
   );
 }
