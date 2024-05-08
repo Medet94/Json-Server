@@ -5,6 +5,7 @@ import {
   deleteMessageById,
 } from '../../url';
 import axios from 'axios';
+import { v4 as uuidv4 } from 'uuid';
 
 // API
 export const getAllComments = createAsyncThunk(
@@ -20,13 +21,14 @@ export const getAllComments = createAsyncThunk(
 
 export const sendMessage = createAsyncThunk(
   'comments/createComments',
-  async ({ text, postId }) => {
+  async ({ inputText, selectId }) => {
     try {
       const response = await axios.post(createNewCommentByPostId, {
-        text,
-        postId,
+        id: uuidv4(),
+        text: inputText,
+        postId: selectId,
       });
-      console.log(response.data);
+      console.log(response);
       return response.data;
     } catch (err) {
       console.error('Ошибка при отправке комментария:', err);

@@ -8,7 +8,7 @@ function Message({ message }) {
   const { commentClickHandler } = useContext(PostContext);
 
   const commentsId = useSelector((state) => state.id.commentId);
-  console.log('Comments Id ', commentsId);
+  //console.log('Comments Id ', commentsId);
 
   const dispatch = useDispatch();
 

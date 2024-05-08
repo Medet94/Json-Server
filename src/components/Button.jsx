@@ -9,10 +9,11 @@ function Button() {
 
   const selectId = useSelector((state) => state.id.postId);
   console.log('selected post id', selectId);
-  const { inputText } = useContext(PostContext);
 
-  const handleSendClick = (e) => {
-    e.preventDefault();
+  const { inputText } = useContext(PostContext);
+  console.log(inputText);
+
+  const handleSendClick = ({ inputText, selectId }) => {
     dispatch(sendMessage({ inputText, selectId }));
   };
 
@@ -21,7 +22,7 @@ function Button() {
       <PrimaryButton
         type="primary"
         className="send-btn send-icon"
-        onClick={handleSendClick}
+        onClick={() => handleSendClick({ inputText, selectId })}
       >
         Send
       </PrimaryButton>
