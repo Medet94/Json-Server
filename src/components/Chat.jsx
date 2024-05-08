@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { IoMdCreate, IoIosClose } from 'react-icons/io';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { deletePost, updatePost } from '../redux/slices/postSlice';
 import { getAllComments } from '../redux/slices/commentsSlice';
 import { select } from '../redux/slices/idSlice';
@@ -8,16 +8,16 @@ import '../App.css';
 
 function Chat({ chatItem }) {
   const [updateTitle, setUpdateTitle] = useState('');
-  const [selectedPostId, setSelectedPostId] = useState(null);
-  console.log(selectedPostId);
+  const postId = useSelector((state) => state.id.postId);
+
   const dispatch = useDispatch();
 
   const deletePostHandler = (id) => {
     dispatch(deletePost(id));
   };
 
-  const updatePostHandler = (title, id) => {
-    dispatch(updatePost(title, id));
+  const updatePostHandler = ({ title, id }) => {
+    dispatch(updatePost({ title, id }));
   };
 
   const inputTitleText = (e) => {
@@ -26,7 +26,6 @@ function Chat({ chatItem }) {
 
   const chatClickHandler = (postId) => {
     dispatch(getAllComments(postId));
-    // setSelectedPostId(postId);
     dispatch(select(postId));
   };
 
@@ -37,14 +36,11 @@ function Chat({ chatItem }) {
         {chatItem.title}
         <span
           className="edit-icon"
-          onClick={() => updatePostHandler(updateTitle, selectedPostId)}
+          onClick={() => updatePostHandler({ updateTitle, postId })}
         >
           <IoMdCreate />
         </span>
-        <span
-          className="delete-icon"
-          onClick={() => deletePostHandler(selectedPostId)}
-        >
+        <span className="delete-icon" onClick={() => deletePostHandler(postId)}>
           <IoIosClose />
         </span>
       </li>

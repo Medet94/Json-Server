@@ -35,20 +35,18 @@ export const createANewPost = createAsyncThunk(
 
 export const updatePost = createAsyncThunk(
   'posts/updatePostById',
-  async (title, id) => {
-    if (title.length > 0) {
-      try {
-        const response = await axios.patch(`${updatePostById}${id}`, {
-          title: title,
-        });
-        console.log(response.data);
-        return response.data;
-        // const updatedPosts = allChats.map((post) =>
-        //   post.id === postId ? { ...post, title: response.data.title } : post
-        // );
-      } catch (error) {
-        console.error('Ошибка при обновлении поста:', error);
-      }
+  async ({ title, id }) => {
+    try {
+      const response = await axios.patch(`${updatePostById}${id}`, {
+        title,
+      });
+      console.log(response.data);
+      return response.data;
+      // const updatedPosts = allChats.map((post) =>
+      //   post.id === postId ? { ...post, title: response.data.title } : post
+      // );
+    } catch (error) {
+      console.error('Ошибка при обновлении поста:', error);
     }
   }
 );
