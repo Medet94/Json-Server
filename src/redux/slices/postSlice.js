@@ -36,15 +36,13 @@ export const createANewPost = createAsyncThunk(
 export const updatePost = createAsyncThunk(
   'posts/updatePostById',
   async ({ updateTitle, postId }) => {
+    const text = prompt('enter new title');
     try {
       const response = await axios.patch(`${updatePostById}${postId}`, {
-        title: updateTitle,
+        title: text,
       });
-      console.log(response.data);
+
       return response.data;
-      // const updatedPosts = allChats.map((post) =>
-      //   post.id === postId ? { ...post, title: response.data.title } : post
-      // );
     } catch (error) {
       console.error('Ошибка при обновлении поста:', error);
     }
@@ -82,12 +80,25 @@ const postSlice = createSlice({
       state.isLoading = false;
       state.posts = action.payload;
     });
+    // builder.addCase(updatePost.pending, (state) => {
+    //   state.isLoading = true;
+    // });
+    builder.addCase(updatePost.fulfilled, (state, action) => {
+      state.isLoading = false;
+      const index = state.posts.findIndex(
+        (post) => post.id === action.payload.id
+      );
+      if (index !== -1) {
+        state.posts[index] = action.payload;
+      }
+    });
     builder.addCase(createANewPost.fulfilled, (state, action) => {
-      state.posts = action.payload;
+      state.posts.push(action.payload);
     });
     builder.addCase(deletePost.fulfilled, (state, action) => {
-      state.posts = action.payload;
-      // return {...state.posts, action.payload}
+      state.posts.filter((id) => id !== action.payload);
+      //return [...state.posts, action.payload];
+      //state.posts = action.payload;
     });
   },
 });

@@ -77,7 +77,9 @@ const commentSlice = createSlice({
     });
     builder.addCase(deleteComment.fulfilled, (state, action) => {
       state.isLoading = false;
-      state.comments = action.payload;
+      state.comments.map((comment) => comment);
+      //state.comments.filter((id) => id !== action.payload.data.id);
+      //console.log('Action Payload', action.payload);
     });
   },
 });
