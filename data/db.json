@@ -2,7 +2,7 @@
   "posts": [
     {
       "id": "6781",
-      "title": "Start"
+      "title": "Restart"
     },
     {
       "id": "cd55",
@@ -33,6 +33,11 @@
     {
       "id": "9ea5191d-ca05-4e85-8037-36b35642fc90",
       "text": "Created message",
+      "postId": "cd55"
+    },
+    {
+      "id": "76754cc3-92c4-43a1-be64-fcb7a8e34f8e",
+      "text": "Delete",
       "postId": "cd55"
     }
   ],

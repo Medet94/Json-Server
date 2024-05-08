@@ -35,10 +35,10 @@ export const createANewPost = createAsyncThunk(
 
 export const updatePost = createAsyncThunk(
   'posts/updatePostById',
-  async ({ title, id }) => {
+  async ({ updateTitle, postId }) => {
     try {
-      const response = await axios.patch(`${updatePostById}${id}`, {
-        title,
+      const response = await axios.patch(`${updatePostById}${postId}`, {
+        title: updateTitle,
       });
       console.log(response.data);
       return response.data;

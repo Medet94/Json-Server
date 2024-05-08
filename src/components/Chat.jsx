@@ -16,8 +16,7 @@ function Chat({ chatItem }) {
     dispatch(deletePost(id));
   };
 
-  const updatePostHandler = (e) => {
-    e.preventDefault();
+  const updatePostHandler = ({ updateTitle, postId }) => {
     dispatch(updatePost({ updateTitle, postId }));
   };
 
@@ -35,7 +34,10 @@ function Chat({ chatItem }) {
       <input type="text" placeholder="new title" onChange={inputTitleText} />
       <li className="chat-item " onClick={() => chatClickHandler(chatItem.id)}>
         {chatItem.title}
-        <span className="edit-icon" onClick={updatePostHandler}>
+        <span
+          className="edit-icon"
+          onClick={() => updatePostHandler({ updateTitle, postId })}
+        >
           <IoMdCreate />
         </span>
         <span className="delete-icon" onClick={() => deletePostHandler(postId)}>
