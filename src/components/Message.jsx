@@ -17,12 +17,14 @@ function Message({ message }) {
   };
 
   return (
-    <h2 className="message" onClick={() => commentClickHandler(message.id)}>
-      {message.text}
-      <span onClick={() => deleteCommentHandler(commentsId)}>
-        <RiChatDeleteLine />
-      </span>
-    </h2>
+    <>
+      <h2 className="message" onClick={() => commentClickHandler(message.id)}>
+        {message.text}
+        <span onClick={() => deleteCommentHandler(commentsId)}>
+          <RiChatDeleteLine />
+        </span>
+      </h2>
+    </>
   );
 }
 

@@ -5,7 +5,6 @@ import { getCommentById } from './url';
 import PostContext from './context/index';
 import Input from './components/Input';
 import Button from './components/Button';
-
 import './App.css';
 import { getPosts } from './redux/slices/postSlice';
 import { useDispatch } from 'react-redux';

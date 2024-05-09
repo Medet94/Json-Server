@@ -17,48 +17,7 @@
       "title": "Delete"
     }
   ],
-  "comments": [
-    {
-      "id": "ac7d5de9-97c2-4041-92f8-007fb981b1c8",
-      "text": "QA",
-      "postId": null
-    },
-    {
-      "id": "6207c896-ddc7-4363-a4d0-006a08b95743",
-      "text": "Restart",
-      "postId": null
-    },
-    {
-      "id": "e690d87b-b797-4c05-9437-b7d4920332c4",
-      "text": "Promise",
-      "postId": null
-    },
-    {
-      "id": "4a3d9394-0193-4910-a30c-bc42fe3e120d",
-      "text": "Json",
-      "postId": null
-    },
-    {
-      "id": "fabf4378-73ad-4310-90ed-a74cbf7170d7",
-      "text": "Developer",
-      "postId": null
-    },
-    {
-      "id": "ee319ae4-415a-42e2-81cc-6280e41ca43f",
-      "text": "createAyncThunk",
-      "postId": null
-    },
-    {
-      "id": "8bd4974f-7bf6-4bc4-8c57-f53740721ebe",
-      "text": "useSelector",
-      "postId": null
-    },
-    {
-      "id": "b11aa6a9-e784-40ce-8b00-c1995619bd73",
-      "text": "Acer",
-      "postId": null
-    }
-  ],
+  "comments": [],
   "profile": {
     "name": "typicode"
   }

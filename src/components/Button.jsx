@@ -23,9 +23,7 @@ function Button() {
         type="primary"
         className="send-btn send-icon"
         onClick={() => handleSendClick({ inputText, selectId })}
-      >
-        Send
-      </PrimaryButton>
+      ></PrimaryButton>
     </div>
   );
 }
