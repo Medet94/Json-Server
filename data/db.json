@@ -2,11 +2,11 @@
   "posts": [
     {
       "id": "cd55",
-      "title": "Atom"
+      "title": "React"
     },
     {
       "id": "b676",
-      "title": "Delete"
+      "title": "Redux"
     },
     {
       "id": "eb3d",
@@ -14,7 +14,15 @@
     },
     {
       "id": "17ee",
-      "title": "Start"
+      "title": "Message"
+    },
+    {
+      "id": "b394",
+      "title": "Google"
+    },
+    {
+      "id": "576a",
+      "title": "Stop"
     }
   ],
   "comments": [
@@ -29,24 +37,44 @@
       "postId": "cd55"
     },
     {
-      "id": "36b941bd-428f-498c-8b19-fd325b9b6c63",
-      "text": "ergrgrvrew",
-      "postId": "cd55"
-    },
-    {
-      "id": "ef7f8005-fcbd-4927-89d7-b27726b9c2b7",
-      "text": "dfrgr",
-      "postId": "cd55"
-    },
-    {
-      "id": "186a9895-1e62-40b6-9160-a3bbaba82d7e",
-      "text": "last message",
-      "postId": "cd55"
-    },
-    {
       "id": "ac7d5de9-97c2-4041-92f8-007fb981b1c8",
       "text": "QA",
       "postId": "eb3d"
+    },
+    {
+      "id": "6207c896-ddc7-4363-a4d0-006a08b95743",
+      "text": "Restart",
+      "postId": "17ee"
+    },
+    {
+      "id": "e690d87b-b797-4c05-9437-b7d4920332c4",
+      "text": "Promise",
+      "postId": "17ee"
+    },
+    {
+      "id": "4a3d9394-0193-4910-a30c-bc42fe3e120d",
+      "text": "Json",
+      "postId": "17ee"
+    },
+    {
+      "id": "fabf4378-73ad-4310-90ed-a74cbf7170d7",
+      "text": "Developer",
+      "postId": "17ee"
+    },
+    {
+      "id": "ee319ae4-415a-42e2-81cc-6280e41ca43f",
+      "text": "createAyncThunk",
+      "postId": "b676"
+    },
+    {
+      "id": "8bd4974f-7bf6-4bc4-8c57-f53740721ebe",
+      "text": "useSelector",
+      "postId": "b676"
+    },
+    {
+      "id": "9c0036b0-d93d-4684-b73d-d5944db58722",
+      "text": "useState",
+      "postId": "cd55"
     }
   ],
   "profile": {

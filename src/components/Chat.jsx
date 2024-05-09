@@ -16,8 +16,8 @@ function Chat({ chatItem }) {
     dispatch(deletePost(id));
   };
 
-  const updatePostHandler = ({ updateTitle, postId }) => {
-    dispatch(updatePost({ updateTitle, postId }));
+  const updatePostHandler = (postId) => {
+    dispatch(updatePost(postId));
   };
 
   const inputTitleText = (e) => {
@@ -31,14 +31,11 @@ function Chat({ chatItem }) {
 
   return (
     <>
-      <input type="text" placeholder="new title" onChange={inputTitleText} />
+      {/* <input type="text" placeholder="new title" onChange={inputTitleText} /> */}
       <li className="chat-item " onClick={() => chatClickHandler(chatItem.id)}>
         {chatItem.title}
 
-        <span
-          className="edit-icon"
-          onClick={() => updatePostHandler({ updateTitle, postId })}
-        >
+        <span className="edit-icon" onClick={() => updatePostHandler(postId)}>
           <IoMdCreate />
         </span>
         <span className="delete-icon" onClick={() => deletePostHandler(postId)}>

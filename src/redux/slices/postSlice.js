@@ -35,16 +35,18 @@ export const createANewPost = createAsyncThunk(
 
 export const updatePost = createAsyncThunk(
   'posts/updatePostById',
-  async ({ updateTitle, postId }) => {
+  async (postId) => {
     const text = prompt('enter new title');
-    try {
-      const response = await axios.patch(`${updatePostById}${postId}`, {
-        title: text,
-      });
+    if (text.length > 0) {
+      try {
+        const response = await axios.patch(`${updatePostById}${postId}`, {
+          title: text,
+        });
 
-      return response.data;
-    } catch (error) {
-      console.error('Ошибка при обновлении поста:', error);
+        return response.data;
+      } catch (error) {
+        console.error('Ошибка при обновлении поста:', error);
+      }
     }
   }
 );
