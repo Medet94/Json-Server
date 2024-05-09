@@ -1,80 +1,62 @@
 {
   "posts": [
     {
-      "id": "cd55",
-      "title": "React"
+      "id": "b3ef",
+      "title": "Delete"
     },
     {
-      "id": "b676",
-      "title": "Redux"
+      "id": "6335",
+      "title": "Json"
     },
     {
-      "id": "eb3d",
-      "title": "Falcon"
+      "id": "6eb0",
+      "title": "Java Script"
     },
     {
-      "id": "17ee",
-      "title": "Message"
-    },
-    {
-      "id": "b394",
-      "title": "Google"
-    },
-    {
-      "id": "576a",
-      "title": "Stop"
+      "id": "a0ab",
+      "title": "Delete"
     }
   ],
   "comments": [
     {
-      "id": "be9a8a5e-4ca5-4b04-94ba-10a6f21e31c9",
-      "inputText": "Message",
-      "selectId": "6781"
-    },
-    {
-      "id": "848b19a2-7a33-4026-8e92-1ea13c77b533",
-      "text": "Message",
-      "postId": "cd55"
-    },
-    {
       "id": "ac7d5de9-97c2-4041-92f8-007fb981b1c8",
       "text": "QA",
-      "postId": "eb3d"
+      "postId": null
     },
     {
       "id": "6207c896-ddc7-4363-a4d0-006a08b95743",
       "text": "Restart",
-      "postId": "17ee"
+      "postId": null
     },
     {
       "id": "e690d87b-b797-4c05-9437-b7d4920332c4",
       "text": "Promise",
-      "postId": "17ee"
+      "postId": null
     },
     {
       "id": "4a3d9394-0193-4910-a30c-bc42fe3e120d",
       "text": "Json",
-      "postId": "17ee"
+      "postId": null
     },
     {
       "id": "fabf4378-73ad-4310-90ed-a74cbf7170d7",
       "text": "Developer",
-      "postId": "17ee"
+      "postId": null
     },
     {
       "id": "ee319ae4-415a-42e2-81cc-6280e41ca43f",
       "text": "createAyncThunk",
-      "postId": "b676"
+      "postId": null
     },
     {
       "id": "8bd4974f-7bf6-4bc4-8c57-f53740721ebe",
       "text": "useSelector",
-      "postId": "b676"
+      "postId": null
     },
     {
-      "id": "9c0036b0-d93d-4684-b73d-d5944db58722",
-      "text": "useState",
-      "postId": "cd55"
+      "id": "b11aa6a9-e784-40ce-8b00-c1995619bd73",
+      "text": "Acer",
+      "postId": null
     }
   ],
   "profile": {

@@ -5,6 +5,8 @@ import { IoIosAdd } from 'react-icons/io';
 import { useSelector, useDispatch } from 'react-redux';
 import { createANewPost } from '../redux/slices/postSlice';
 import { BeatLoader } from 'react-spinners';
+import { RedoOutlined } from '@ant-design/icons';
+import { getPosts } from '../redux/slices/postSlice';
 
 function ChatList() {
   const [title, setTitle] = useState('');
@@ -23,8 +25,17 @@ function ChatList() {
     setTitle(e.target.value);
   };
 
+  const handlePageUpdate = () => {
+    dispatch(getPosts());
+  };
+
   return (
     <div className="chat-list-container">
+      <span>
+        Update Chat List
+        <RedoOutlined onClick={handlePageUpdate} className="update-icon" />
+      </span>
+
       <h1>ChatList</h1>
       {isLoading ? (
         <BeatLoader />

@@ -107,6 +107,11 @@
 .edit-icon {
   margin-left: 30px;
 }
+.update-icon {
+  size: 25px;
+  margin-left: 10px;
+  color: rgb(5, 72, 20);
+}
 
 .icon-add:hover {
   color: #007bff;
