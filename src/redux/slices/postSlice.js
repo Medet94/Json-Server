@@ -54,14 +54,15 @@ export const updatePost = createAsyncThunk(
 export const deletePost = createAsyncThunk(
   'posts/deletePost',
 
-  async (id) => {
+  async (id, { rejectWithValue, dispatch }) => {
     if (window.confirm('Do you wanna delete the post?')) {
-      console.log('Post deleted with createAsyncThunk');
-
       try {
-        await axios
-          .delete(`${deletePostById}${id}`)
-          .then((response) => response.data);
+        const response = await axios.delete(`${deletePostById}${id}`);
+
+        if (!response.ok) {
+          throw new Error('Cant delete post. Error');
+        }
+        dispatch(deletePost(id));
       } catch (error) {
         console.error('Ошибка при удалении комментария:', error);
       }
@@ -98,7 +99,7 @@ const postSlice = createSlice({
       state.posts.push(action.payload);
     });
     builder.addCase(deletePost.fulfilled, (state, action) => {
-      state.posts.filter((id) => id !== action.payload);
+      state.posts = state.posts.filter((id) => id !== action.payload);
       //return [...state.posts, action.payload];
       //state.posts = action.payload;
     });

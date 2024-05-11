@@ -8,10 +8,9 @@ function Button() {
   const dispatch = useDispatch();
 
   const selectId = useSelector((state) => state.id.postId);
-  console.log('selected post id', selectId);
+  //console.log('selected post id', selectId);
 
   const { inputText } = useContext(PostContext);
-  console.log(inputText);
 
   const handleSendClick = ({ inputText, selectId }) => {
     dispatch(sendMessage({ inputText, selectId }));
