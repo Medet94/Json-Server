@@ -1,55 +1,52 @@
 .app {
-  display: flex;
-  margin-top: 10px;
-  flex-direction: column;
-  height: 90vh;
-  text-align: center;
+  padding: 10px;
+  height: 94vh;
+
+  overflow: hidden;
 }
 
 .left-panel {
   background-color: #5269ec;
-  width: 300px;
-  padding: 20px;
-  border: 1px solid #ccc;
+  width: 20%;
   border-radius: 5px;
-  overflow-y: auto;
   height: 93%;
   float: left;
+  overflow-y: auto;
+}
+
+.message-panel {
+  text-align: right;
+  width: 77%;
+  height: 93%;
+  float: right;
+  background-color: #878686;
+  overflow-y: auto;
+  border-radius: 5px;
+}
+
+.bottom-panel {
+  text-align: center;
+
+  height: 10%;
 }
 
 .chat-list {
   list-style: none;
-  margin: 0;
-  padding: 0;
-  text-align: left;
 }
 
 .chat-item {
   padding: 10px;
-  margin-left: 10px;
   border-bottom: 1px solid #ddd;
   cursor: pointer;
 }
 
 .chat-item:hover {
   background-color: #6f82ecf1;
-  flex-grow: 1; /* Занимает всё доступное пространство */
-  overflow-y: auto; /* Включаем вертикальный скролл */
+  flex-grow: 1;
 }
 
 .chat {
   margin-bottom: 10px;
-}
-
-.main-panel {
-  flex: 10;
-  padding: 5px;
-  background-color: #8e8b8b;
-  display: flex;
-  justify-content: space-between;
-  height: 600px;
-  width: 100%;
-  float: left;
 }
 
 .input-form {
@@ -78,8 +75,6 @@
 
 .chat-list-container {
   list-style: none;
-  margin: 0 auto;
-  padding: 0;
 }
 
 .message {
@@ -115,10 +110,28 @@
   color: #007bff;
 }
 
+/* .app {
+  padding: 10px;
+  height: 90vh;
+  border: 2px solid red;
+}
+
+.left-panel {
+  background-color: #5269ec;
+  width: 20%;
+  height: 97%;
+  border-radius: 5px;
+  float: left;
+  border: 2px solid orange;
+}
+
 .message-panel {
   text-align: right;
+  border: 3px solid red;
+  width: 77%;
+  float: right;
 }
 .bottom-panel {
-  display: flex;
-  align-items: end;
-}
+  text-align: center;
+  width: 50%;
+} */

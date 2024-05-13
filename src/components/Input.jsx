@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import PostContext from '../context/index';
+import '../App.css';
 //import { useDispatch } from 'react-redux';
 
 const Input = () => {

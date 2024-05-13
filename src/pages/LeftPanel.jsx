@@ -3,7 +3,7 @@ import ChatList from '../components/ChatList';
 
 function LeftPanel() {
   return (
-    <div className="left-panel">
+    <div>
       <ChatList />
     </div>
   );

@@ -36,26 +36,24 @@ const App = () => {
 
   return (
     <div className="app">
-      <div className="main-panel">
-        <PostContext.Provider
-          value={{
-            handleInputChange,
-            inputText,
-            commentClickHandler,
-          }}
-        >
-          <div className="list-panel">
-            <LeftPanel />
-          </div>
-          <div className="message-panel">
-            <MainPanel />
-          </div>
-          <div className="bottom-panel">
-            <Input />
-            <Button />
-          </div>
-        </PostContext.Provider>
-      </div>
+      <PostContext.Provider
+        value={{
+          handleInputChange,
+          inputText,
+          commentClickHandler,
+        }}
+      >
+        <div className="left-panel">
+          <LeftPanel />
+        </div>
+        <div className="message-panel">
+          <MainPanel />
+        </div>
+        <div className="bottom-panel">
+          <Input />
+          <Button />
+        </div>
+      </PostContext.Provider>
     </div>
   );
 };

@@ -7,6 +7,7 @@ import { createANewPost } from '../redux/slices/postSlice';
 import { BeatLoader } from 'react-spinners';
 import { RedoOutlined } from '@ant-design/icons';
 import { getPosts } from '../redux/slices/postSlice';
+import '../App.css';
 
 function ChatList() {
   const [title, setTitle] = useState('');
