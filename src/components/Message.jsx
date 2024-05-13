@@ -1,14 +1,13 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { RiChatDeleteLine } from 'react-icons/ri';
-import PostContext from '../context/index';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteComment } from '../redux/slices/commentsSlice';
+import { getCommentId } from '../redux/slices/commentsSlice';
+import { commentSelect } from '../redux/slices/idSlice';
 
 function Message({ message }) {
-  const { commentClickHandler } = useContext(PostContext);
-
-  const commentsId = useSelector((state) => state.id.commentId);
-  //console.log('Comments Id ', commentsId);
+  const commentId = useSelector((state) => state.id.commentId);
+  console.log('Comments Id ', commentId);
 
   const dispatch = useDispatch();
 
@@ -16,11 +15,16 @@ function Message({ message }) {
     dispatch(deleteComment(commentId));
   };
 
+  const commentClickHandler = (commentId) => {
+    dispatch(getCommentId(commentId));
+    dispatch(commentSelect(commentId));
+  };
+
   return (
     <>
       <h2 className="message" onClick={() => commentClickHandler(message.id)}>
         {message.text}
-        <span onClick={() => deleteCommentHandler(commentsId)}>
+        <span onClick={() => deleteCommentHandler(commentId)}>
           <RiChatDeleteLine />
         </span>
       </h2>

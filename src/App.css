@@ -26,7 +26,6 @@
 
 .bottom-panel {
   text-align: center;
-
   height: 10%;
 }
 
@@ -68,9 +67,7 @@
 .send-btn {
   background-color: #007bff;
   cursor: pointer;
-}
-.send-icon {
-  font-size: 20px;
+  border-radius: 30%;
 }
 
 .chat-list-container {
@@ -81,6 +78,7 @@
   text-align: right;
   color: rgb(28, 73, 73);
   cursor: pointer;
+  width: auto;
 }
 .input-button {
   display: flex;
@@ -94,11 +92,12 @@
   color: rgb(128, 29, 29);
   font-size: 25px;
   cursor: pointer;
-  margin-left: 30px;
+  float: right;
+  margin-right: 10px;
 }
 .edit-icon {
-  margin-left: 30px;
   color: green;
+  float: right;
 }
 .update-icon {
   size: 25px;
@@ -109,29 +108,3 @@
 .icon-add:hover {
   color: #007bff;
 }
-
-/* .app {
-  padding: 10px;
-  height: 90vh;
-  border: 2px solid red;
-}
-
-.left-panel {
-  background-color: #5269ec;
-  width: 20%;
-  height: 97%;
-  border-radius: 5px;
-  float: left;
-  border: 2px solid orange;
-}
-
-.message-panel {
-  text-align: right;
-  border: 3px solid red;
-  width: 77%;
-  float: right;
-}
-.bottom-panel {
-  text-align: center;
-  width: 50%;
-} */

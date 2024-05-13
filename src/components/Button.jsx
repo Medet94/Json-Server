@@ -1,14 +1,13 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { sendMessage } from '../redux/slices/commentsSlice';
-import PostContext from '../context';
+import '../App.css';
 
 function Button() {
   const dispatch = useDispatch();
 
   const selectId = useSelector((state) => state.id.postId);
-
-  const { inputText } = useContext(PostContext);
+  const inputText = useSelector((state) => state.text.text);
 
   const handleSendClick = ({ inputText, selectId }) => {
     dispatch(sendMessage({ inputText, selectId }));
@@ -16,7 +15,10 @@ function Button() {
 
   return (
     <div>
-      <button onClick={() => handleSendClick({ inputText, selectId })}>
+      <button
+        className="send-btn"
+        onClick={() => handleSendClick({ inputText, selectId })}
+      >
         Send
       </button>
     </div>

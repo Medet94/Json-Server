@@ -1,6 +1,5 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import Chat from '../components/Chat';
-import PostContext from '../context/index';
 import { IoIosAdd } from 'react-icons/io';
 import { useSelector, useDispatch } from 'react-redux';
 import { createANewPost } from '../redux/slices/postSlice';
@@ -11,7 +10,6 @@ import '../App.css';
 
 function ChatList() {
   const [title, setTitle] = useState('');
-  const { chatClickHandler } = useContext(PostContext);
 
   const posts = useSelector((state) => state.posts.posts);
   const isLoading = useSelector((state) => state.posts.isLoading);
@@ -55,11 +53,7 @@ function ChatList() {
 
       <ul className="chat-list">
         {posts.map((post) => (
-          <Chat
-            onChatItemHandler={chatClickHandler}
-            chatItem={post}
-            key={post.id}
-          />
+          <Chat chatItem={post} key={post.id} />
         ))}
       </ul>
     </div>

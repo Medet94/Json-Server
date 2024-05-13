@@ -3,6 +3,7 @@ import {
   getCommentsByPostId,
   createNewCommentByPostId,
   deleteMessageById,
+  getCommentById,
 } from '../../url';
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
@@ -16,6 +17,17 @@ export const getAllComments = createAsyncThunk(
     );
 
     return response;
+  }
+);
+
+export const getCommentId = createAsyncThunk(
+  'comment/getComment',
+  async (commentId) => {
+    let commentById = await fetch(`${getCommentById}${commentId}`).then(
+      (response) => response.json()
+    );
+
+    return commentById;
   }
 );
 
