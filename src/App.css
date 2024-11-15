@@ -1,7 +1,6 @@
 .app {
   padding: 10px;
   height: 94vh;
-
   overflow: hidden;
 }
 
@@ -9,7 +8,7 @@
   background-color: #5269ec;
   width: 20%;
   border-radius: 5px;
-  height: 93%;
+  height: 100%;
   float: left;
   overflow-y: auto;
 }
@@ -25,8 +24,11 @@
 }
 
 .bottom-panel {
-  text-align: center;
-  height: 10%;
+  margin-left: 40%;
+  margin-top: 650px;
+  width: 350px;
+  height: 50px;
+  display: flex;
 }
 
 .chat-list {
@@ -34,7 +36,7 @@
 }
 
 .chat-item {
-  padding: 10px;
+  padding: 20px;
   border-bottom: 1px solid #ddd;
   cursor: pointer;
 }
@@ -68,43 +70,55 @@
   background-color: #007bff;
   cursor: pointer;
   border-radius: 30%;
+  /* animation: btnscale 1s ease-in 0s infinite; */
 }
 
-.chat-list-container {
-  list-style: none;
+.send-btn:hover {
+  scale: 1.2;
 }
+
+/* @keyframes btnscale {
+  from {
+    scale: 1;
+  }
+  to {
+    scale: 1.1;
+  }
+} */
 
 .message {
   text-align: right;
   color: rgb(28, 73, 73);
   cursor: pointer;
-  width: auto;
+  margin-right: 15px;
 }
 .input-button {
   display: flex;
 }
 .icon-add {
   color: rgb(5, 72, 20);
-  font-size: 40px;
+  font-size: 30px;
   cursor: pointer;
 }
+
+.icon-add:hover {
+  color: #007bff;
+  scale: 1.1;
+}
+
 .delete-icon {
   color: rgb(128, 29, 29);
   font-size: 25px;
   cursor: pointer;
   float: right;
-  margin-right: 10px;
+  margin-right: 15px;
 }
 .edit-icon {
-  color: green;
+  color: rgb(10, 48, 10);
   float: right;
 }
 .update-icon {
-  size: 25px;
-  margin-left: 10px;
-  color: rgb(5, 72, 20);
-}
-
-.icon-add:hover {
-  color: #007bff;
+  size: 55px;
+  margin-left: 15px;
+  color: rgb(57, 55, 55);
 }

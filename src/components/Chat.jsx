@@ -30,7 +30,7 @@ function Chat({ chatItem }) {
         {chatItem.title}
 
         <span className="edit-icon" onClick={() => updatePostHandler(postId)}>
-          <EditOutlined size={'25px'} />
+          <EditOutlined />
         </span>
         <span className="delete-icon" onClick={() => deletePostHandler(postId)}>
           <DeleteOutlined />

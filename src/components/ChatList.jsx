@@ -29,23 +29,25 @@ function ChatList() {
   };
 
   return (
-    <div className="chat-list-container">
-      <span>
-        Update Chat List
-        <RedoOutlined onClick={handlePageUpdate} className="update-icon" />
-      </span>
+    <>
+      <div className="chat-list-container">
+        <span>
+          Update Chat List
+          <RedoOutlined onClick={handlePageUpdate} className="update-icon" />
+        </span>
 
-      <h1>ChatList</h1>
-      {isLoading ? (
-        <BeatLoader />
-      ) : (
-        <input
-          className="chat-list-input"
-          type="text"
-          placeholder="Создать новый пост"
-          onChange={handleTitle}
-        />
-      )}
+        <h1>ChatList</h1>
+        {isLoading ? (
+          <BeatLoader />
+        ) : (
+          <input
+            className="chat-list-input"
+            type="text"
+            placeholder="Создать новый пост"
+            onChange={handleTitle}
+          />
+        )}
+      </div>
 
       <span className="icon-add" onClick={() => createNewPostClick(title)}>
         <IoIosAdd />
@@ -56,7 +58,7 @@ function ChatList() {
           <Chat chatItem={post} key={post.id} />
         ))}
       </ul>
-    </div>
+    </>
   );
 }
 
