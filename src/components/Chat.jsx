@@ -27,7 +27,7 @@ function Chat({ chatItem }) {
   return (
     <>
       <li className="chat-item " onClick={() => chatClickHandler(chatItem.id)}>
-        {chatItem.title}
+        {chatItem.label}
 
         <span className="edit-icon" onClick={() => updatePostHandler(postId)}>
           <EditOutlined />

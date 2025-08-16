@@ -22,7 +22,7 @@ export const createANewPost = createAsyncThunk(
     if (title.length > 0) {
       try {
         const response = await axios.post(createNewPost, {
-          title: title,
+          label: title,
         });
 
         return response.data;

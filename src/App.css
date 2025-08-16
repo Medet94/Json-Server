@@ -33,6 +33,9 @@
 
 .chat-list {
   list-style: none;
+  border: 1px solid red;
+  margin: 0;
+  margin-left: 0;
 }
 
 .chat-item {

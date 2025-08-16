@@ -7,7 +7,6 @@ import { commentSelect } from '../redux/slices/idSlice';
 
 function Message({ message }) {
   const commentId = useSelector((state) => state.id.commentId);
-  console.log('Comments Id ', commentId);
 
   const dispatch = useDispatch();
 
@@ -24,9 +23,8 @@ function Message({ message }) {
     <>
       <h2 className="message" onClick={() => commentClickHandler(message.id)}>
         {message.text}
-        <span onClick={() => deleteCommentHandler(commentId)}>
-          <RiChatDeleteLine />
-        </span>
+
+        <RiChatDeleteLine onClick={() => deleteCommentHandler(commentId)} />
       </h2>
     </>
   );

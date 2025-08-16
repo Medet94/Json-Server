@@ -1,12 +1,12 @@
 import React from 'react';
 import ChatList from '../components/ChatList';
 
-function LeftPanel() {
+const LeftPanel = () => {
   return (
     <div>
       <ChatList />
     </div>
   );
-}
+};
 
 export default LeftPanel;

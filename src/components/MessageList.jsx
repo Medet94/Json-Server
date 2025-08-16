@@ -5,7 +5,7 @@ import { ClockLoader } from 'react-spinners';
 
 function MessageList() {
   const comments = useSelector((state) => state.comments.comments);
-  console.log(comments);
+
   const isLoading = useSelector((state) => state.comments.isLoading);
 
   return (

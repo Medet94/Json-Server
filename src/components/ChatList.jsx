@@ -6,18 +6,23 @@ import { createANewPost } from '../redux/slices/postSlice';
 import { BeatLoader } from 'react-spinners';
 import { RedoOutlined } from '@ant-design/icons';
 import { getPosts } from '../redux/slices/postSlice';
+import { getAllComments } from '../redux/slices/commentsSlice';
+import { select } from '../redux/slices/idSlice';
+import { Menu } from 'antd';
 import '../App.css';
 
 function ChatList() {
   const [title, setTitle] = useState('');
 
   const posts = useSelector((state) => state.posts.posts);
+  console.log(posts);
   const isLoading = useSelector((state) => state.posts.isLoading);
 
   const dispatch = useDispatch();
 
-  const createNewPostClick = (title) => {
+  const createNewPost = (title) => {
     dispatch(createANewPost(title));
+    setTitle('');
   };
 
   const handleTitle = (e) => {
@@ -28,13 +33,18 @@ function ChatList() {
     dispatch(getPosts());
   };
 
+  const chatClickHandler = (postId) => {
+    dispatch(getAllComments(postId));
+    dispatch(select(postId));
+  };
+
   return (
     <>
       <div className="chat-list-container">
-        <span>
+        <h3>
           Update Chat List
-          <RedoOutlined onClick={handlePageUpdate} className="update-icon" />
-        </span>
+          <RedoOutlined onClick={handlePageUpdate} />
+        </h3>
 
         <h1>ChatList</h1>
         {isLoading ? (
@@ -49,13 +59,14 @@ function ChatList() {
         )}
       </div>
 
-      <span className="icon-add" onClick={() => createNewPostClick(title)}>
-        <IoIosAdd />
-      </span>
+      <IoIosAdd onClick={() => createNewPost(title)} />
 
       <ul className="chat-list">
         {posts.map((post) => (
-          <Chat chatItem={post} key={post.id} />
+          <>
+            <Menu onClick={() => chatClickHandler(post.id)} items={posts} />
+            <Chat chatItem={post} key={post.id} />
+          </>
         ))}
       </ul>
     </>
